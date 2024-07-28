@@ -1,0 +1,7 @@
+.default {
+  transition: background-color 1s ease-out;
+}
+
+.after {
+  background-color: rgb(192, 136, 195) !important;
+}

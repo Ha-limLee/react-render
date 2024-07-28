@@ -1,0 +1,9 @@
+.root {
+  display: flex;
+}
+
+.side-bar {
+  width: fit-content;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.304);
+}

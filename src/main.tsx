@@ -1,10 +1,30 @@
-import "./index.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import ReactDOM from "react-dom/client";
-import Root from "./routes/root.tsx";
 import { StrictMode } from "react";
+import ReactDOM from "react-dom/client";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-const router = createBrowserRouter([{ path: "/", element: <Root /> }]);
+import ChildrenProp from "./routes/children-prop.tsx";
+import Layout from "./components/layout.tsx";
+
+import "./index.css";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <Layout>
+        <ChildrenProp />
+      </Layout>
+    ),
+  },
+  {
+    path: "children-prop",
+    element: (
+      <Layout>
+        <ChildrenProp />
+      </Layout>
+    ),
+  },
+]);
 
 const root = document.getElementById("root");
 if (!root) throw new Error("cannot find root");
