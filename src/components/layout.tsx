@@ -22,7 +22,7 @@ export default function Layout({ children }: Props): React.JSX.Element {
           </ul>
         </nav>
       </div>
-      <div style={{ flexGrow: 1 }}>{children}</div>
+      <div className={style.content}>{children}</div>
     </div>
   );
 }
