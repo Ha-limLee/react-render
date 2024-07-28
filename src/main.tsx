@@ -2,8 +2,9 @@ import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import ChildrenProp from "./routes/children-prop.tsx";
 import Layout from "./components/layout.tsx";
+import ChildrenProp from "./routes/children-prop.tsx";
+import ChildrenPropMemoizedParent from "./routes/children-prop-memoized-parent.tsx";
 
 import "./index.css";
 
@@ -21,6 +22,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <ChildrenProp />
+      </Layout>
+    ),
+  },
+  {
+    path: "children-prop-memoized-parent",
+    element: (
+      <Layout>
+        <ChildrenPropMemoizedParent />
       </Layout>
     ),
   },

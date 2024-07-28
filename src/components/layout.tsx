@@ -12,7 +12,12 @@ export default function Layout({ children }: Props): React.JSX.Element {
         <nav style={{ paddingRight: "20px" }}>
           <ul>
             <li>
-              <a href={`/children-prop`}>children prop</a>
+              <a href={`/children-prop`}>children as prop</a>
+            </li>
+            <li>
+              <a href={`/children-prop-memoized-parent`}>
+                children as prop, memoized parent
+              </a>
             </li>
           </ul>
         </nav>
