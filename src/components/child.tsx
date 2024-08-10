@@ -1,16 +1,18 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import useColorTransition from "../hooks/use-color-transition";
 import style from "./child.module.css";
 
 export default function Child(): React.JSX.Element {
   const [count, setCount] = useState(0);
 
-  const el = useRef<HTMLDivElement>(null);
-  useColorTransition(el.current);
+  const [el, setEl] = useState<HTMLDivElement | null>(null);
+  useColorTransition(el);
 
   return (
     <div
-      ref={el}
+      ref={(node) => {
+        if (node) setEl(node);
+      }}
       className={style.root}
       onClick={(e) => {
         e.stopPropagation();

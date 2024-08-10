@@ -1,4 +1,4 @@
-import { memo, ReactNode, useRef, useState } from "react";
+import { memo, ReactNode, useState } from "react";
 import useColorTransition from "../hooks/use-color-transition";
 import style from "./parent.module.css";
 
@@ -8,13 +8,15 @@ type Props = {
 
 function Parent({ children }: Props): React.JSX.Element {
   const [count, setCount] = useState(0);
-  const el = useRef<HTMLDivElement>(null);
+  const [el, setEl] = useState<HTMLDivElement | null>(null);
 
-  useColorTransition(el.current);
+  useColorTransition(el);
 
   return (
     <div
-      ref={el}
+      ref={(node) => {
+        if (node) setEl(node);
+      }}
       className={`${style.root}`}
       onClick={() => {
         setCount(count + 1);
