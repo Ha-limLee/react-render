@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./components/layout.tsx";
 import ChildrenProp from "./routes/children-prop.tsx";
 import ChildrenPropMemoizedParent from "./routes/children-prop-memoized-parent.tsx";
+import ChildrenNonProp from "./routes/children-non-prop.tsx";
 
 import "./index.css";
 
@@ -13,7 +14,15 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <Layout>
-        <ChildrenProp />
+        <ChildrenNonProp />
+      </Layout>
+    ),
+  },
+  {
+    path: "children-non-prop",
+    element: (
+      <Layout>
+        <ChildrenNonProp />
       </Layout>
     ),
   },

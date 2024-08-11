@@ -12,6 +12,9 @@ export default function Layout({ children }: Props): React.JSX.Element {
         <nav style={{ paddingRight: "20px" }}>
           <ul>
             <li>
+              <a href={"/children-non-prop"}>children non prop</a>
+            </li>
+            <li>
               <a href={`/children-prop`}>children as prop</a>
             </li>
             <li>
