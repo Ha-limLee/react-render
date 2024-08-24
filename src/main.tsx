@@ -7,11 +7,13 @@ import ChildrenProp from "./routes/children-prop.tsx";
 import ChildrenPropMemoizedParent from "./routes/children-prop-memoized-parent.tsx";
 import ChildrenNonProp from "./routes/children-non-prop.tsx";
 
+import * as paths from "./consts/path.ts";
+
 import "./index.css";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: paths.root,
     element: (
       <Layout>
         <ChildrenNonProp />
@@ -19,7 +21,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "children-non-prop",
+    path: paths.childrenNonProp,
     element: (
       <Layout>
         <ChildrenNonProp />
@@ -27,7 +29,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "children-prop",
+    path: paths.childrenProp,
     element: (
       <Layout>
         <ChildrenProp />
@@ -35,7 +37,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "children-prop-memoized-parent",
+    path: paths.childrenPropMemoizedParent,
     element: (
       <Layout>
         <ChildrenPropMemoizedParent />
