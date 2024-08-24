@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import { Link } from "react-router-dom";
+
 import style from "./layout.module.css";
 
 import * as paths from "../consts/path";
@@ -14,15 +16,15 @@ export default function Layout({ children }: Props): React.JSX.Element {
         <nav style={{ paddingRight: "20px" }}>
           <ul>
             <li>
-              <a href={paths.childrenNonProp}>children non prop</a>
+              <Link to={paths.childrenNonProp}>children non prop</Link>
             </li>
             <li>
-              <a href={paths.childrenProp}>children as prop</a>
+              <Link to={paths.childrenProp}>children as prop</Link>
             </li>
             <li>
-              <a href={paths.childrenPropMemoizedParent}>
+              <Link to={paths.childrenPropMemoizedParent}>
                 children as prop, memoized parent
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
